@@ -1,0 +1,10 @@
+# Test files
+test.*
+
+# Executables
+*.exe
+output
+
+# VS Code
+.vscode
+.vs
