@@ -61,8 +61,8 @@ int solve() {
 
     cin >> row >> col;
 
-    vector<vector<int>> board(row, vector<int>(col, 0));
-    vector<vector<pii>> positions(min(row,col));
+    vector<vector<int>> board(row, vector<int>(col, min(row,col)+   1));
+    vector<vector<pii>> positions(min(row,col)+1);
 
     int lilipads; cin >> lilipads;
     int c = 0;
