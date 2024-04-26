@@ -61,11 +61,11 @@ int solve() {
 
     cin >> row >> col;
 
-    vector<vector<int>> board(row, vector<int>(col, min(row,col)+   1));
+    vector<vector<int>> board(row, vector<int>(col, min(row,col)+1));
     vector<vector<pii>> positions(min(row,col)+1);
 
     int lilipads; cin >> lilipads;
-    int c = 0;
+    int c = 0; // up to 1e18
 
     int x, y;
     for (int i = 0; i < lilipads; i++) {
@@ -75,14 +75,14 @@ int solve() {
         c++;
     }
 
-    // BFS MULTISOURCE TO BUILD THE BOARD WITH NUMBERS OF EACH STEP
+    // MODIFIED BFS TO BUILD THE BOARD WITH NUMBERS OF EACH STEP
     int k = 1;
     while (c != row*col) {
         for (auto cord: positions[k]) {
             for (int d = 0; d < 4; d++) {
                 x = cord.first+dx[d]; y = cord.second+dy[d];
                 if (x >= 0 && x < row && y >= 0 && y < col) {
-                    if (board[x][y] == 0) {
+                    if (board[x][y] == min(row,col)+1) {
                         board[x][y] = k+1;
                         positions[k+1].push_back({x,y});
                         c++;
@@ -101,7 +101,7 @@ int main(){
     cin.tie(0);
 
     int tc; cin >> tc; while (tc--) {
-        cout << solve() << endl;
+        cout << solve()-1 << endl;
     }
 
     return 0;
