@@ -74,7 +74,7 @@ ll fact(ll n) {
 ll exp2(int n) {
     ll f = 1;
     FOR(i, 0, n) {
-        f = f*2 % MOD;
+        f = (f << 1) % MOD;
     }
     return f;
 }

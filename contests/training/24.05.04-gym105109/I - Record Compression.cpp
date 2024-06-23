@@ -50,9 +50,10 @@ int main(){
             
             table[i][j] = table[i-1][j];
             if (w <= j) {
-                for (int r = 1; r <= (j/w); r++) {
+                //for (int r = 1; r <= (j/w); r++) {
+                int r = j/w;
                     table[i][j] = max(table[i][j], v*r + table[i-1][j-(w*r)]);
-                }
+                //}
             }
         }
     }
