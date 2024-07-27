@@ -22,6 +22,7 @@ int solve() {
         if (e) can_attend[4] += 1;
     }
 
+
     c = 0;
     for (int i = 0; i < 5; i++) {
         if (can_attend[i] >= n/2) c++;
