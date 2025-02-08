@@ -2,12 +2,10 @@
 
 #define endl '\n'
 
-using namespace std;    
-using ll = long long;  
-
+using namespace std;
+using ll = long long;
 const int MOD = 1e9+7;
 
-// Time complexity: O(log(n))
 ll fexpll(ll a, ll n) {
 	ll ans = 1;
 	while(n) {
@@ -18,7 +16,6 @@ ll fexpll(ll a, ll n) {
 	return ans;
 }
 
-// Time complexity: O(log(mod))
 ll modInverse(ll n) {
     return fexpll(n, MOD-2);
 }
@@ -38,7 +35,7 @@ vector<int> pascal(int n) {
     return coefficients;
 }
 
-// Time complexity: O(log(mod-2)*log(n)) [Amortized]
+// Time complexity: O(log(mod-2)) [Amortized]
 map<int, vector<int>> pascal_triangle;
 ll choose(ll n, ll k) {
     if (pascal_triangle.count(n) == 0) pascal_triangle[n] = pascal(n);
@@ -48,42 +45,45 @@ ll choose(ll n, ll k) {
     return pascal_triangle[n][k];
 }
 
-// O(K) * O(K+log(k)) == O(k²)
-int recursion(int n, int k, vector<int>& memoization) {
-    if (memoization[k] != -1) return memoization[k];
-
-    // O(log(k));
-    ll answ = (fexpll(1+n, k+1) - n - 1 + MOD) % MOD;
-
-    // O(K)
-    for (int i = 1; i <= k-1; i++) {
-        answ = ((answ - 
-                ((choose(k+1, i) * recursion(n, i, memoization)) % MOD)
-            ) + MOD) % MOD;
-    }
-
-    answ = (answ * modInverse(k+1)) % MOD;
-
-    return memoization[k] = answ;
+ll mult(ll x, ll y) {
+    x %= MOD; y %= MOD;
+    return (x * y) % MOD;
 }
 
-int solve() {
-    int n, k; cin >> n >> k;
+ll divs(ll x, ll y) {
+    x %= MOD; y %= MOD;
+    return (x * modInverse(y)) % MOD;
+}
 
-    vector<int> memoization(k+1, -1);
+vector<ll> fact; 
+void precalc_fact(ll n) {
+    fact.resize(n+1);
 
-    cout << recursion(n, k, memoization) << endl;
+    fact[0] = 1, fact[1] = 1;
 
-    return 0;
+    for (ll i = 2; i <= n; i++) {
+        fact[i] = (fact[i - 1] * i) % MOD;
+    }
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    int tc; cin >> tc; while (tc--) {
-        solve();
+    int n; cin >> n;
+
+    precalc_fact(n);
+
+    ll den = fact[n];
+    ll num = 0;
+
+    for (int k = 0; k <= n; k++) {
+        num = (num + mult(mult(pow(-1, k), choose(n,k)), fact[n-k])) % MOD;
     }
+
+    num = (fact[n] - num + MOD) % MOD;
+
+    cout << divs(num, den) << endl;
 
     return 0;
 }
