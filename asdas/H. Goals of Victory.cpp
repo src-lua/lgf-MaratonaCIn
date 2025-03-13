@@ -1,12 +1,3 @@
-/*                                          
-  Lucas Guimarães Fernandes </lgf_cin>
-  MaratonaCIn @ CIn - UFPE
-
-  [Minimise Oneness](https://codeforces.com/contest/2030/problem/B)
-  Rating: 800
-  Tags: Game; O(1)
-  Status: Accepted
-*/
 #include <bits/stdc++.h>
 
 #define endl '\n'
@@ -16,11 +7,16 @@ using namespace std;
 int solve() {
 
     int n; cin >> n;
-    cout << 1;
+    long long sum = 0;
+
+    int x;
     for (int i = 0; i < n-1; i++) {
-        cout << 0;
+        cin >> x;
+        sum += x;
     }
-    cout << endl;
+
+    cout << -sum << endl;
+    
 
     return 0;
 }

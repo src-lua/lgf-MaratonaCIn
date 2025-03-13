@@ -2,10 +2,11 @@
   Lucas Guimarães Fernandes </lgf_cin>
   MaratonaCIn @ CIn - UFPE
 
-  [Maximize Mex](codeforces.com/contest/2021/problem/B)
+  [Maximize Mex](https://codeforces.com/contest/2021/problem/B)
+  Rating: 1200
+  Tags: Brute; Simulation; Mex;
   Status: Accepted
 */
-
 #include <bits/stdc++.h>
 
 #define endl '\n'

@@ -6,7 +6,7 @@ using namespace std;
 
 vector<string> solve(int n) {
 
-    if (n == 1) return {"0", "1"};
+    if (n == 1) return {"0", "1"}; // 00 01 11 10
 
     vector<string> answ;
 
@@ -17,7 +17,7 @@ vector<string> solve(int n) {
     }
 
     for (int i = a.size()-1; i >= 0; i--) {
-        answ.push_back('1' + a[i]);
+        answ.push_back('1' + a[i]); 
     }
     
     return answ;
