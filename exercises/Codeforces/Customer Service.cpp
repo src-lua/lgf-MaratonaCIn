@@ -2,10 +2,11 @@
   Lucas Guimarães Fernandes </lgf_cin>
   MaratonaCIn @ CIn - UFPE
 
-  [Customer Service](codeforces.com/contest/2059/problem/C)
+  [Customer Service](https://codeforces.com/contest/2059/problem/C)
+  Rating: 1600
+  Tags: Greedy;
   Status: Accepted
 */
-
 #include <bits/stdc++.h>
 
 #define endl '\n'
