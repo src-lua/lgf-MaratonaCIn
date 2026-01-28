@@ -1,0 +1,80 @@
+#!/usr/bin/env python3
+# Install: ln -s "$(cd "$(dirname "$0")" && pwd)/cp-cli" ~/.local/bin/cp-cli
+"""
+cp-cli - Competitive Programming CLI
+
+Usage:
+    cp-cli new [url]                    Create a new contest
+    cp-cli add <name>                   Add a single file with template
+    cp-cli mark <problem> [status]      Mark problem status (default: AC)
+    cp-cli status [directory]           Show contest progress summary
+    cp-cli clean [--all | directory]    Remove compiled binaries
+    cp-cli update [--all | directory]   Update info.md
+"""
+import sys
+import os
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, SCRIPT_DIR)
+
+from colors import Colors
+BLUE, BOLD, GREEN, FAIL, ENDC = Colors.BLUE, Colors.BOLD, Colors.GREEN, Colors.FAIL, Colors.ENDC
+
+COMMANDS = {
+    'new':    'Create a new contest     (e.g. cp-cli new <url>)',
+    'add':    'Add a single file        (e.g. cp-cli add A2)',
+    'mark':   'Mark problem status      (e.g. cp-cli mark A)',
+    'status': 'Show contest progress    (e.g. cp-cli status)',
+    'clean':  'Remove compiled binaries (e.g. cp-cli clean --all)',
+    'update': 'Update info.md           (e.g. cp-cli update --all)',
+}
+
+def print_help():
+    print(f"{BOLD}cp-cli{ENDC} - Competitive Programming CLI\n")
+    print(f"{BOLD}Usage:{ENDC} cp-cli <command> [args]\n")
+    print(f"{BOLD}Commands:{ENDC}")
+    for cmd, desc in COMMANDS.items():
+        print(f"  {GREEN}{cmd:<8}{ENDC}  {desc}")
+    print(f"\nRun {BLUE}cp-cli <command> --help{ENDC} for more info on a command.")
+
+def main():
+    if len(sys.argv) < 2 or sys.argv[1] in ['-h', '--help']:
+        print_help()
+        sys.exit(0)
+
+    command = sys.argv[1]
+
+    # Rewrite sys.argv so the sub-script sees its own args
+    sys.argv = [command] + sys.argv[2:]
+
+    if command == 'new':
+        import new_contest
+        new_contest.main()
+
+    elif command == 'add':
+        import add_file
+        add_file.main()
+
+    elif command == 'mark':
+        import mark_status
+        mark_status.main()
+
+    elif command == 'status':
+        import contest_status
+        contest_status.main()
+
+    elif command == 'clean':
+        import clean
+        clean.main()
+
+    elif command == 'update':
+        import update_info
+        update_info.main()
+
+    else:
+        print(f"{FAIL}Unknown command: {command}{ENDC}\n")
+        print_help()
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()

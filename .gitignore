@@ -3,9 +3,16 @@ test.*
 
 # Executables
 *.exe
+*.out
+*.o
 output
+
+# Python
+__pycache__/
+
+# Root info.md (generated incorrectly if update_info runs on root)
+/info.md
 
 # VS Code
 .vscode
 .vs
-virtual_contests/CF115/B. Groups.cpp
