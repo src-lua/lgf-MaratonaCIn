@@ -2,7 +2,7 @@
  * Author:      Lua
  * Problem:     L
  * Link:        https://vjudge.net/contest/784977#problem/L
- * Status:      ~
+ * Status:      AC
  * Created:     28-01-2026 16:28:16
  **/
 
