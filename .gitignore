@@ -1,18 +1,21 @@
-# Test files
-test.*
+__pycache__/
+*.pyc
+*.pyo
 
-# Executables
-*.exe
+# Compiled binaries
 *.out
 *.o
-output
 
-# Python
-__pycache__/
-
-# Root info.md (generated incorrectly if update_info runs on root)
-/info.md
+# Stress test artifacts
+sol
+brt
+gen
+chk
+in
+out
+out2
 
 # VS Code
 .vscode
 .vs
+.*
