@@ -1,7 +1,7 @@
 /**
  * Author:      Lua
- * Problem:     C
- * Link:        https://vjudge.net/contest/782309#problem/C
+ * Problem:     O
+ * Link:        https://vjudge.net/contest/782309#problem/O
  * Status:      ~
  * Created:     29-01-2026 11:06:02
  **/

@@ -1,98 +1,78 @@
 /**
  * Author:      Lua
  * Problem:     I
- * Link:        https://vjudge.net/contest/784977#problem/I
+ * Link:        https://vjudge.net/contest/782309#problem/I
  * Status:      AC
- * Created:     28-01-2026 16:28:16
+ * Created:     29-01-2026 11:06:02
  **/
 
-#include <bits/stdc++.h>
-
+ #include <bits/stdc++.h>
+#define endl '\n'
+using ll = long long;
 using namespace std;
-using ll = long long int;
-using pii = pair<int,int>;
+const int INF = 2e9;
 
-const bool TEST = false;
+vector<vector<pair<int, int>>> gf;
+vector<vector<int>> nxt;
 
-int nnn = 16, mmm = 16;
-pii xxxx = {3, 9}, yyyy = {9, 3};
+int djs(int ori){
+    vector<int> dst(gf.size(), INF);
 
-int dist(pii a, pii b) {
-    return abs(a.first-b.first) + abs(a.second-b.second);
-}
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> heap;
 
-vector<vector<int>> board;
+    heap.push({0, ori});
+    dst[ori] = 0;
 
-void RUN_TEST(int n, int m){    
-    board = vector<vector<int>>(n, vector<int>(m, -1));
-    for(int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            board[i][j] = dist(xxxx, {i,j}) + dist(yyyy, {i,j});
+    while(!heap.empty()){
+        auto [dt, u] = heap.top(); heap.pop();
+        if(dst[u] < dt) continue;
+
+        for(auto [v, tm] : gf[u]){
+            int trns = *lower_bound(nxt[tm].begin(), nxt[tm].end(), dt) - dt + 1;
+
+            if(dst[v] > dst[u] + trns){
+                // cout << u + 1 << " " << v + 1 << " | " << dt << "at wait" << trns << endl;
+                dst[v] = dst[u] + trns;
+                heap.push({dst[v], v});
+            }
         }
     }
-}
 
-int scan(int x, int y) {
-    x++, y++;
-    cout << "SCAN " << x << ' ' << y << endl;
-    if(TEST) return board[x-1][y-1];
-    int ans; cin >> ans;
-    return ans;
-}
+    // for(auto &x : dst) cout << x << " "; cout << endl;
 
-int dig(int x, int y) {
-    x++, y++;
-    cout << "DIG " << x << ' ' << y << endl;
-    if(TEST){
-        if(pii(x-1, y-1) == xxxx || pii(x-1, y-1) == yyyy) return 1;
-        return 0;
-    } 
-    int ans; cin >> ans;
-    return ans;
-}
-
-void solve() {
-    int n, m; 
-    if(TEST) { n = nnn; m = mmm; RUN_TEST(n, m); }
-    else cin >> n >> m;
-    
-    // (r1 + r2) + (c1 + c2)
-    int a = scan(0, 0);
-    
-    // (r1 + r2) + (m-1-c1 + m-1-c2)
-    int b = scan(0, m - 1);
-    
-    // a + b = 2*Sr + 2*(m-1)
-    ll sr = (1LL * a + b - 2LL * (m - 1)) / 2;
-    ll sc = a - sr;
-    
-    ll delta_r = scan(sr/2, 0) - sc;
-    ll delta_c = scan(0, sc/2) - sr;
-    
-    int r1 = (sr - delta_r) / 2;
-    int r2 = (sr + delta_r) / 2;
-    
-    int c1 = (sc - delta_c) / 2;
-    int c2 = (sc + delta_c) / 2;
-    
-    if (dig(r1, c1)) {
-        dig(r2, c2);
-    } 
-    else {
-        dig(r1, c2);
-        dig(r2, c1);
-    }
+    if(dst.back() == INF)return -1;
+    else return dst.back();    
 }
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(0); 
+    ios::sync_with_stdio(false);cin.tie(0);
+    int n, t;
+    cin>>n>>t;
     
-    if (TEST) solve();
-    else {
-        int tc; cin >> tc; 
-        while (tc--) solve();
+    gf.resize(n);
+    nxt.resize(t);
+
+    for(int i=0;i<t;i++){
+        int m;
+        cin>>m;
+        for(int j=0, u, v;j<m;j++){
+            cin>>u>>v;
+            u--;v--;
+
+            gf[u].push_back({v, i});
+            gf[v].push_back({u, i});
+        }
+    }
+    int k;
+    cin>>k;
+    for(int i=0;i<k;i++){
+        int tp; cin>>tp;
+        tp--;
+
+        nxt[tp].push_back(i);
     }
 
-    return 0;
+    for(int i=0;i<t;i++) nxt[i].push_back(INF + 1);
+
+    cout << djs(0) << endl;
 }

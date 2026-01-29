@@ -1,9 +1,9 @@
 /**
  * Author:      Lua
- * Problem:     C
- * Link:        https://vjudge.net/contest/782309#problem/C
+ * Problem:     F
+ * Link:        https://vjudge.net/contest/784977#problem/F
  * Status:      ~
- * Created:     29-01-2026 11:06:02
+ * Created:     28-01-2026 16:28:16
  **/
 
 #include <bits/stdc++.h>
