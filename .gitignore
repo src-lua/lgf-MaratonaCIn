@@ -2,6 +2,10 @@ __pycache__/
 *.pyc
 *.pyo
 
+# Test samples
+*.in
+*.out
+
 # Compiled binaries
 *.out
 *.o
