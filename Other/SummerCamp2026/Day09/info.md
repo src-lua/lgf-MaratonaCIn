@@ -4,7 +4,7 @@
 
 **Created**: 30-01-2026 20:41:29
 
-**Progress**: 1/15 solved
+**Progress**: 2/15 solved
 
 ## Problems
 
@@ -21,7 +21,7 @@
 | [I](https://vjudge.net/contest/783195#problem/I) | ⬜  |
 | [J](https://vjudge.net/contest/783195#problem/J) | ⬜  |
 | [K](https://vjudge.net/contest/783195#problem/K) | ⬜  |
-| [L](https://vjudge.net/contest/783195#problem/L) | ⬜  |
+| [L](https://vjudge.net/contest/783195#problem/L) | ✅ AC |
 | [M](https://vjudge.net/contest/783195#problem/M) | ⬜  |
 | [N](https://vjudge.net/contest/783195#problem/N) | ⬜  |
 | [O](https://vjudge.net/contest/783195#problem/O) | ⬜  |
