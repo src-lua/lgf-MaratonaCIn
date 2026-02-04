@@ -2,7 +2,7 @@
  * Author:      Lua
  * Problem:     1736 - Polynomial Queries
  * Link:        https://cses.fi/problemset/task/1736
- * Status:      ~
+ * Status:      AC
  * Created:     04-02-2026 01:40:23
  **/
 
