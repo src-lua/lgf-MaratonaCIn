@@ -2,7 +2,7 @@
  * Author:      Lua
  * Problem:     C - Sasha and Array
  * Link:        https://codeforces.com/contest/718/problem/C
- * Status:      ~
+ * Status:      AC
  * Created:     29-01-2026 13:41:52
  **/
 
