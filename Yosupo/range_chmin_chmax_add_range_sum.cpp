@@ -2,7 +2,7 @@
  * Author:      Lua
  * Problem:     range_chmin_chmax_add_range_sum - Range Chmin Chmax Add Range Sum
  * Link:        https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum
- * Status:      ~
+ * Status:      AC
  * Created:     05-02-2026 22:22:44
  **/
 
