@@ -1,13 +1,15 @@
 # Contest
 
-**Created**: 31-01-2026 15:13:19
+**Created**: 06-02-2026 01:29:15
 
-**Progress**: 4/4 solved
+**Progress**: 5/6 solved
 
 ## Problems
 
 | Problem | Status |
 |---------|--------|
+| [1143 - Hotel Queries](https://cses.fi/problemset/task/1143) | ⬜  |
+| [1190 - Subarray Sum Queries](https://cses.fi/problemset/task/1190) | ✅ AC |
 | [1636 - Coin Combinations II](https://cses.fi/problemset/task/1636) | ✅ AC |
 | [1651 - Range Update Queries](https://cses.fi/problemset/task/1651) | ✅ AC |
 | [1736 - Polynomial Queries](https://cses.fi/problemset/task/1736) | ✅ AC |
