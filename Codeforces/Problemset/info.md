@@ -1,12 +1,14 @@
 # Codeforces
 
-**Progress**: 3/4 solved
+**Progress**: 5/6 solved
 
 ## Problems
 
 | Problem | Status |
 |---------|--------|
+| [D - The Child and Sequence](https://codeforces.com/problemset/problem/438/D) | ✅ AC |
 | [C - Mr. Kitayuta, the Treasure Hunter](https://codeforces.com/contest/505/problem/C) | ⬜  |
 | [C - Circular RMQ](https://codeforces.com/problemset/problem/52/C) | ✅ AC |
 | [C - Sasha and Array](https://codeforces.com/contest/718/problem/C) | ✅ AC |
 | [E - Physical Education Lessons](https://codeforces.com/problemset/problem/915/E) | ✅ AC |
+| [J - Subsequence Sum Queries](https://codeforces.com/gym/101741/problem/J) | ✅ AC |
