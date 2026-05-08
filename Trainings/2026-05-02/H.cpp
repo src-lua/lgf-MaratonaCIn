@@ -15,27 +15,11 @@ vector<int> where(21);
 
 string abc = "ABC";
 
-int getaux(int from, int to) {
-    if (from == 0) {
-        if (to == 1) return 2;
-        return 1;
-    }
-    if (from == 1) {
-        if (to == 0) return 2;
-        return 0;
-    }
-    if (from == 2) {
-        if (to == 0) return 1;
-        return 0;
-    }
-    return -1;
-}
-
 void move(int x, int from, int to) {
     if (from == to) return;
 
     for (int i = x - 1; i >= 1; i--) 
-        move(i, where[i], getaux(from, to));
+        move(i, where[i], 3-from-to);
     
     ans.push_back(abc[from] + string(" ") + abc[to]);
     where[x] = to;
