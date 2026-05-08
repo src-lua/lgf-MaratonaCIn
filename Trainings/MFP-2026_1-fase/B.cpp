@@ -11,47 +11,49 @@
 using namespace std;
 using ll = long long;
 
-vector<vector<int>> adj;
-vector<int> value;
-int n, limit;
-int k;
-vector<pair<int,int>> curr_ans;
-ll L, R;
+struct Context {
+    int limit;
+    const vector<vector<int>>& adj;
+    const vector<int>& value;
+    vector<pair<int,int>> curr_ans;
+};
 
-ll dfs(int u, int p, ll x) {
+ll dfs(int u, int p, ll x, Context& ctx) {
     vector<pair<ll, int>> arr;
-    for (int v : adj[u]) if (v != p) arr.emplace_back(dfs(v,u, x), v);
+    for (int v : ctx.adj[u]) if (v != p) arr.emplace_back(dfs(v, u, x, ctx), v);
     sort(arr.begin(), arr.end());
-    ll curr = value[u];
-    for (int i = 0; i < arr.size(); i++) {
-        if (curr + arr[i].first <= x) curr += arr[i].first;
-        else k++, curr_ans.emplace_back(u, arr[i].second);
+    ll curr = ctx.value[u];
+    for (auto [w, v] : arr) {
+        if (curr + w <= x) curr += w;
+        else ctx.curr_ans.emplace_back(u, v);
     }
     return curr;
 }
 
-bool check(ll x) {
-    k = 0; curr_ans.clear();
-    dfs(0, -1, x);
-    return k <= limit;
+bool check(ll x, Context& ctx) {
+    ctx.curr_ans.clear();
+    dfs(0, -1, x, ctx);
+    return ctx.curr_ans.size() <= ctx.limit;
 }
 
-void solve() {
+void solve(Context& ctx) {
+    ll l = *max_element(ctx.value.begin(), ctx.value.end());
+    ll r = accumulate(ctx.value.begin(), ctx.value.end(), 0LL);
     vector<pair<int,int>> ans;
 
-    while (L <= R) {
-        ll m = L + (R-L)/2;
+    while (l <= r) {
+        ll m = l + (r-l)/2;
 
-        if (check(m)) {
-            R = m - 1;
-            ans = curr_ans;
+        if (check(m, ctx)) {
+            r = m - 1;
+            ans = ctx.curr_ans;
         }
-        else L = m + 1;
+        else l = m + 1;
     }
 
     cout << ans.size() << '\n';
-    for (auto [l, r] : ans) {
-        cout << l + 1 << ' ' << r + 1   << '\n';
+    for (auto [u, v] : ans) {
+        cout << u + 1 << ' ' << v + 1 << '\n';
     }
 }
 
@@ -59,20 +61,18 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0); cout.tie(0);
 
-    cin >> n >> limit;
-    value = vector<int>(n); for (auto &x : value) cin >> x;
+    int n, k; cin >> n >> k;
+    vector<int> value(n); for (auto &x : value) cin >> x;
 
-    L = *max_element(value.begin(), value.end());
-    R = accumulate(value.begin(), value.end(), 0LL);
-    
-    adj = vector<vector<int>>(n);
+    vector<vector<int>> adj(n);
     for (int i = 0; i < n-1; i++) {
         int u, v; cin >> u >> v; u--, v--;
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
-    
-    solve();
+
+    Context ctx{k, adj, value};
+    solve(ctx);
 
     return 0;
 }
