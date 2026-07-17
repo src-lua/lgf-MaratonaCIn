@@ -1,11 +1,12 @@
 # Codeforces
 
-**Progress**: 5/6 solved
+**Progress**: 5/7 solved
 
 ## Problems
 
 | Problem | Status |
 |---------|--------|
+| [E](https://codeforces.com/problemset/problem/1706/E) | ⬜  |
 | [D - The Child and Sequence](https://codeforces.com/problemset/problem/438/D) | ✅ AC |
 | [C - Mr. Kitayuta, the Treasure Hunter](https://codeforces.com/contest/505/problem/C) | ⬜  |
 | [C - Circular RMQ](https://codeforces.com/problemset/problem/52/C) | ✅ AC |
