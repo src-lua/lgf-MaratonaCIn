@@ -1,8 +1,8 @@
-# Codeforces Gym
+# Trainings
 
 **Created**: 16-05-2026 08:41:06
 
-**Progress**: 0/13 solved
+**Progress**: 0/14 solved
 
 ## Problems
 
@@ -21,3 +21,4 @@
 | [K](https://codeforces.com/gym/100184/problem/K) | ⬜  |
 | [L](https://codeforces.com/gym/100184/problem/L) | ⬜  |
 | [M](https://codeforces.com/gym/100184/problem/M) | ⬜  |
+| tested | ⬜  |

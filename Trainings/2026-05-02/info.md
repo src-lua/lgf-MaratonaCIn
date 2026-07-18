@@ -4,7 +4,7 @@
 
 **Created**: 02-05-2026 08:53:00
 
-**Progress**: 2/15 solved
+**Progress**: 2/14 solved
 
 ## Problems
 
@@ -24,4 +24,3 @@
 | [L](https://codeforces.com/group/btcK4I5D5f/contest/689113/problem/L) | ⬜  |
 | [M](https://codeforces.com/group/btcK4I5D5f/contest/689113/problem/M) | ⬜  |
 | [N](https://codeforces.com/group/btcK4I5D5f/contest/689113/problem/N) | ⬜  |
-| fsadas | ⬜  |

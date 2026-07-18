@@ -17,6 +17,6 @@
 | [G](https://codeforces.com/gym/106225/problem/G) | ⬜  |
 | [H](https://codeforces.com/gym/106225/problem/H) | ⬜  |
 | [I](https://codeforces.com/gym/106225/problem/I) | ⬜  |
-| [J](https://codeforces.com/gym/106225/problem/J) | ⬜  |
+| J | ⬜  |
 | [K](https://codeforces.com/gym/106225/problem/K) | ⬜  |
 | [L](https://codeforces.com/gym/106225/problem/L) | ⬜  |

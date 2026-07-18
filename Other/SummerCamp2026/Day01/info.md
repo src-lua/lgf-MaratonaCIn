@@ -1,6 +1,6 @@
-# Other
+# SummerCamp2026 - SummerCamp2026
 
-**Contest**: [VJudge](https://vjudge.net/contest/781528)
+**Contest**: [vJudge](https://vjudge.net/contest/781528)
 
 **Created**: 28-01-2026 16:15:44
 
