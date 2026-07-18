@@ -11,7 +11,7 @@
 using namespace std;
 using ll = long long;
 
-#include "lib/data-structures/segment-tree/seg-beats.hpp"
+#include "lib/data-structures/segment-tree/segment-tree-beats.hpp"
 
 const ll NO_OP = 1e18; 
 
