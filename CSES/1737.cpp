@@ -11,7 +11,7 @@
 using namespace std;
 using ll = long long int;
 
-#include "lgf-cplib/data-structures/segment-tree/dynamic-persistent-segment-tree.hpp"
+#include "lib/data-structures/segment-tree/dynamic-persistent-segment-tree.hpp"
 
 struct Node {
     ll val;

@@ -8,7 +8,7 @@
 
 #include <bits/stdc++.h>
 
-#include "lgf-cplib/data-structures/segment-tree/segment-tree.hpp"
+#include "lib/data-structures/segment-tree/segment-tree.hpp"
 
 struct Node {
     int val;

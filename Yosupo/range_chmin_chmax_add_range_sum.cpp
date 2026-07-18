@@ -8,7 +8,7 @@
 
 #include <bits/stdc++.h>
 
-#include "lgf-cplib/data-structures/segment-tree/seg-beats.hpp"
+#include "lib/data-structures/segment-tree/seg-beats.hpp"
 
 using ll = long long;
 const ll INF = 1e18;

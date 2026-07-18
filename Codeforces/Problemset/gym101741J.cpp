@@ -14,7 +14,7 @@ using ll = long long;
 const int MOD = 1e9+7;
 int mod_m;
 
-#include "lgf-cplib/data-structures/segment-tree/segment-tree.hpp"
+#include "lib/data-structures/segment-tree/segment-tree.hpp"
 
 struct Node {
     array<ll, 20> cnt;

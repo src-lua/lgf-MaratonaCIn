@@ -12,7 +12,7 @@ using namespace std;
 using ll = long long int;
 using Graph = vector<vector<int>>;
 
-#include "lgf-cplib/data-structures/segment-tree/dynamic-persistent-segment-tree.hpp"
+#include "lib/data-structures/segment-tree/dynamic-persistent-segment-tree.hpp"
 
 template<typename NODE>
 struct walkPST : public PersistentSegmentTree<NODE> {
@@ -49,7 +49,7 @@ struct walkPST : public PersistentSegmentTree<NODE> {
     }
 };
 
-#include "lgf-cplib/graphs/lca.hpp"
+#include "lib/graphs/lca.hpp"
 
 struct Node {
     int count;

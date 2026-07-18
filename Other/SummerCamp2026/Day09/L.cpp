@@ -10,8 +10,8 @@
 
 using namespace std;
 
-// #include "lgf-cplib/data-structures/segment-tree/lazy-segment-tree.hpp"
-#include "lgf-cplib/data-structures/segment-tree/dual-segment-tree.hpp"
+// #include "lib/data-structures/segment-tree/lazy-segment-tree.hpp"
+#include "lib/data-structures/segment-tree/dual-segment-tree.hpp"
 
 struct Tag {
     int set;

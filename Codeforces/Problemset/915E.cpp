@@ -13,7 +13,7 @@ using iii = tuple<int,int,int>;
 
 using ll = long long int;
 
-#include "lgf-cplib/data-structures/segment-tree/dynamic-segment-tree.hpp"
+#include "lib/data-structures/segment-tree/dynamic-segment-tree.hpp"
 
 struct Tag {
     int set = -1;

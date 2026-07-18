@@ -11,7 +11,7 @@
 using namespace std;
 using ll = long long;
 
-#include "lgf-cplib/data-structures/segment-tree/lazy-segment-tree.hpp"
+#include "lib/data-structures/segment-tree/lazy-segment-tree.hpp"
 
 struct Tag {
     ll a, b;

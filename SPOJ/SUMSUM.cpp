@@ -11,7 +11,7 @@
 using namespace std;
 using ll = long long;
 
-#include "lgf-cplib/data-structures/segment-tree/segment-tree.hpp"
+#include "lib/data-structures/segment-tree/segment-tree.hpp"
 
 struct Node {
     vector<int> mask;
